@@ -15,6 +15,8 @@ const defaultSlides = [
     btnText: 'Ver Catálogo',
     btnLink: '/catalogo',
     bgGradient: 'from-red-700 via-red-600 to-red-800',
+    desktopImg: '/fondo-hero-pc.png',
+    mobileImg: '/fondo-hero-movil.png',
   },
   {
     id: 2,
@@ -24,6 +26,8 @@ const defaultSlides = [
     btnText: 'Comprar Herramientas',
     btnLink: '/catalogo?category=Herramientas%20Eléctricas',
     bgGradient: 'from-slate-950 via-slate-900 to-slate-800',
+    desktopImg: '/fondo-hero-pc.png',
+    mobileImg: '/fondo-hero-movil.png',
   },
   {
     id: 3,
@@ -33,6 +37,8 @@ const defaultSlides = [
     btnText: 'Contactar Asesor',
     btnLink: '/checkout',
     bgGradient: 'from-slate-900 via-red-900 to-slate-900',
+    desktopImg: '/fondo-hero-pc.png',
+    mobileImg: '/fondo-hero-movil.png',
   },
 ];
 
@@ -53,9 +59,16 @@ export function HeroCarousel() {
           {defaultSlides.map((slide) => (
             <div
               key={slide.id}
-              className={`flex-[0_0_100%] min-w-0 relative h-[48vh] md:h-[62vh] min-h-[380px] md:min-h-[480px] py-12 md:py-20 px-6 md:px-20 text-white bg-gradient-to-r ${slide.bgGradient} flex flex-col justify-center items-start`}
+              className={`flex-[0_0_100%] min-w-0 relative h-[48vh] md:h-[62vh] min-h-[380px] md:min-h-[480px] py-12 md:py-20 px-6 md:px-20 text-white bg-gradient-to-r ${slide.bgGradient} flex flex-col justify-center items-start overflow-hidden group`}
             >
-              <div className="max-w-3xl space-y-4 md:space-y-6 relative z-10">
+              {/* Imágenes de Fondo Dinámicas */}
+              {slide.desktopImg && <div className="hidden md:block absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url('${slide.desktopImg}')` }}></div>}
+              {slide.mobileImg && <div className="block md:hidden absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url('${slide.mobileImg}')` }}></div>}
+              
+              {/* Capa de oscurecimiento para que el texto resalte */}
+              {(slide.desktopImg || slide.mobileImg) && <div className="absolute inset-0 bg-black/60 z-0"></div>}
+
+              <div className="max-w-3xl space-y-4 md:space-y-6 relative z-10 pointer-events-none">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-[11px] md:text-xs font-black uppercase tracking-wider shadow-sm">
                   <ShieldCheck className="w-4 h-4 text-white" />
                   {slide.badge}
