@@ -186,7 +186,7 @@ function HeaderContent() {
           </div>
         </header>
 
-        {/* Buscador Móvil */}
+        {/* Buscador Móvil (Integrado en el flujo del Header) */}
         {showSearch && (
           <div className="md:hidden bg-white border-b border-gray-100 px-4 py-2.5">
             <div className="flex items-center gap-2 bg-slate-50 border border-gray-200 rounded-full px-3.5 py-2">

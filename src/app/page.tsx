@@ -65,8 +65,8 @@ function HomeContent() {
     : products.filter(p => p.category.toLowerCase() === selectedCategory.toLowerCase());
 
   return (
-    // Se aumentó el pt (padding-top) para que el Header fijo no pise el Hero
-    <div className="w-full bg-slate-50 min-h-screen pt-[180px] md:pt-[160px] pb-28">
+    // Se ajustó el padding-top (pt) para compensar el buscador móvil
+    <div className="w-full bg-slate-50 min-h-screen pt-[220px] md:pt-[160px] pb-28">
       <div className="w-full px-4 md:px-10 lg:px-16 space-y-12 md:space-y-16">
         
         {/* 1. HERO CAROUSEL */}

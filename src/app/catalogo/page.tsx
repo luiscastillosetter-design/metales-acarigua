@@ -75,8 +75,8 @@ function CatalogoContent() {
   };
 
   return (
-    // Ajuste clave de padding-top para que no choque con el Header
-    <div className="w-full bg-slate-50 min-h-screen pt-[180px] md:pt-[160px] pb-24">
+    // Ajuste clave de padding-top para que no choque con el Header y el buscador móvil
+    <div className="w-full bg-slate-50 min-h-screen pt-[220px] md:pt-[160px] pb-24">
       <div className="w-full px-4 md:px-10 lg:px-16 space-y-8">
         
         {/* Cabecera Panorámica */}
