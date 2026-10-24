@@ -78,7 +78,7 @@ function HomeContent() {
         <section className="w-full">
           <div className="flex items-center justify-between mb-4 md:mb-6">
             <div>
-              <span className="text-orange-500 font-black text-xs uppercase tracking-wider">Departamentos TodoMax</span>
+              <span className="text-red-600 font-black text-xs uppercase tracking-wider">Departamentos</span>
               <h2 className="text-2xl md:text-3xl font-black text-slate-900">Explora por Categoría</h2>
             </div>
             {selectedCategory !== 'Todos' && (

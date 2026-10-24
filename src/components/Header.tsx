@@ -81,7 +81,7 @@ function HeaderContent() {
               className="hidden md:flex items-center gap-1.5 text-orange-400 hover:text-orange-300 font-bold transition-all hover:scale-105"
             >
               <CircleDollarSign className="w-4 h-4" />
-              <span>Gana dinero con TodoMax</span>
+              <span>Gana dinero con Metales Acarigua</span>
             </Link>
           </div>
         </div>
@@ -116,7 +116,7 @@ function HeaderContent() {
                   <Search className="w-5 h-5 text-gray-400" />
                   <input
                     type="text"
-                    placeholder="Buscar en TodoMax: freidoras, mini UPS, aspiradoras, belleza..."
+                    placeholder="Buscar tubos, láminas, taladros, herramientas..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full bg-transparent outline-none text-sm text-slate-800 placeholder-gray-400 font-medium"
@@ -193,7 +193,7 @@ function HeaderContent() {
               <Search className="w-4 h-4 text-gray-400" />
               <input
                 type="text"
-                placeholder="Buscar en TodoMax..."
+                placeholder="Buscar materiales..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-transparent outline-none text-xs text-slate-800 placeholder-gray-400 font-medium"

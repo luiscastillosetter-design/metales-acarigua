@@ -93,15 +93,15 @@ function CatalogoContent() {
             </p>
           </div>
 
-          <div className="flex overflow-x-auto md:flex-wrap gap-2 pb-2 md:pb-0 scrollbar-hide">
+          <div className="flex flex-nowrap md:flex-wrap overflow-x-auto gap-3 pb-2 md:pb-0 scrollbar-hide w-full md:w-auto md:justify-end mt-4 md:mt-0">
             {availableCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => handleCategorySelect(cat)}
-                className={`flex-shrink-0 px-5 py-2.5 rounded-2xl text-xs font-bold transition-all duration-300 cursor-pointer hover:-translate-y-0.5 hover:shadow-md ${
+                className={`flex-shrink-0 px-5 py-2.5 rounded-2xl text-xs font-bold transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-md ${
                   activeCategory.toLowerCase() === cat.toLowerCase()
                     ? 'bg-slate-900 text-white shadow-lg'
-                    : 'bg-slate-100 text-slate-700 hover:bg-orange-50 hover:text-orange-600'
+                    : 'bg-slate-100 text-slate-700 hover:bg-red-50 hover:text-red-600'
                 }`}
               >
                 {cat}

@@ -45,8 +45,8 @@ export default function Footer() {
           <h3 className="text-sm font-black text-slate-800 uppercase tracking-widest mb-4">Servicios</h3>
           <ul className="space-y-3">
             <li>
-              <Link href="/afiliados" className="text-sm font-bold text-orange-500 hover:text-orange-600 transition-colors flex items-center gap-1">
-                Gana dinero con TodoMax
+              <Link href="/afiliados" className="text-sm font-bold text-red-600 hover:text-red-700 transition-colors flex items-center gap-1">
+                Gana dinero con Metales Acarigua
               </Link>
             </li>
             <li className="flex items-start gap-2 mt-4 text-sm text-gray-500 font-medium">
