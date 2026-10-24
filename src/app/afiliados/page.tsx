@@ -32,11 +32,11 @@ export default function AfiliadosPage() {
   const [copiedLink, setCopiedLink] = useState('');
   const [chatInput, setChatInput] = useState('');
   const [chatMessages, setChatMessages] = useState<{role: 'ia' | 'user', text: string}[]>([
-    { role: 'ia', text: '¡Hola! Soy Sofía, tu asistente IA de TodoMax. Dime, ¿qué producto quieres vender hoy y te entregaré tu kit de publicidad?' }
+    { role: 'ia', text: '¡Hola! Soy Sofía, tu asistente IA de Metales Acarigua. Dime, ¿qué producto quieres vender hoy y te entregaré tu kit de publicidad?' }
   ]);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('todomax_affiliate_user');
+    const storedUser = localStorage.getItem('Metales Acarigua_affiliate_user');
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
       setUser(parsedUser);
@@ -81,7 +81,7 @@ export default function AfiliadosPage() {
       codigo: cleanCode,
       joinedAt: new Date().toISOString()
     };
-    localStorage.setItem('todomax_affiliate_user', JSON.stringify(newUser));
+    localStorage.setItem('Metales Acarigua_affiliate_user', JSON.stringify(newUser));
     setUser(newUser);
   };
 
@@ -109,7 +109,7 @@ export default function AfiliadosPage() {
         responseText = `¡Excelente elección! Aquí tienes tu kit para *${foundProduct.title}*:\n\n` +
           `📸 *Material Visual:* Accede desde la pestaña 'Biblioteca'.\n` +
           `📝 *Texto sugerido:* ${foundProduct.adCopy || '¡Compra este increíble producto hoy mismo con envío gratis!'}\n\n` +
-          `🔗 *Tu Enlace:* https://todomax.com/product/${foundProduct.id}?ref=${user?.codigo}`;
+          `🔗 *Tu Enlace:* https://Metales Acarigua.com/product/${foundProduct.id}?ref=${user?.codigo}`;
       }
 
       setChatMessages([...newMsgs, { role: 'ia', text: responseText }]);
@@ -134,7 +134,7 @@ export default function AfiliadosPage() {
               Gana Dinero Vendiendo <span className="text-orange-500">Sin Inventario</span>
             </h1>
             <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed max-w-xl">
-              Únete al equipo comercial de TodoMax. Te damos los videos, las imágenes y tu enlace personalizado. Tú solo publicas; nosotros cobramos, despachamos y te pagamos tu comisión.
+              Únete al equipo comercial de Metales Acarigua. Te damos los videos, las imágenes y tu enlace personalizado. Tú solo publicas; nosotros cobramos, despachamos y te pagamos tu comisión.
             </p>
             
             <div className="space-y-4 pt-4">
@@ -172,7 +172,7 @@ export default function AfiliadosPage() {
               <div className="flex items-start gap-3 p-3 bg-orange-50 rounded-xl border border-orange-100">
                 <input type="checkbox" id="terms" checked={acceptedTerms} onChange={e => setAcceptedTerms(e.target.checked)} className="mt-1" />
                 <label htmlFor="terms" className="text-[10px] text-slate-700 font-medium leading-tight cursor-pointer">
-                  Acepto que TodoMax se encarga del cobro y despacho al cliente final. Mis comisiones se liberarán únicamente cuando el pedido marque estado "Entregado".
+                  Acepto que Metales Acarigua se encarga del cobro y despacho al cliente final. Mis comisiones se liberarán únicamente cuando el pedido marque estado "Entregado".
                 </label>
               </div>
               <button type="submit" className="w-full bg-slate-900 hover:bg-orange-500 text-white font-black py-4 rounded-xl transition-colors cursor-pointer active:scale-95 shadow-md">
@@ -206,7 +206,7 @@ export default function AfiliadosPage() {
             </div>
           </div>
           <button 
-            onClick={() => { localStorage.removeItem('todomax_affiliate_user'); setUser(null); }}
+            onClick={() => { localStorage.removeItem('Metales Acarigua_affiliate_user'); setUser(null); }}
             className="text-xs font-bold text-slate-400 hover:text-white transition-colors"
           >
             Cerrar Sesión
@@ -237,10 +237,10 @@ export default function AfiliadosPage() {
               </div>
               <div className="flex items-center w-full md:w-auto bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
                 <span className="px-4 text-xs font-bold text-slate-600 truncate max-w-[200px] md:max-w-xs">
-                  https://todomax.com/?ref={user.codigo}
+                  https://Metales Acarigua.com/?ref={user.codigo}
                 </span>
                 <button 
-                  onClick={() => copyToClipboard(`https://todomax.com/?ref=${user.codigo}`, 'general')}
+                  onClick={() => copyToClipboard(`https://Metales Acarigua.com/?ref=${user.codigo}`, 'general')}
                   className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 text-xs font-black transition-colors flex items-center gap-1.5"
                 >
                   {copiedLink === 'general' ? <CheckCircle2 className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
@@ -305,7 +305,7 @@ export default function AfiliadosPage() {
                     <div className="mt-4 space-y-3 border-t border-gray-100 pt-4">
                       {/* Enlace Específico */}
                       <button 
-                        onClick={() => copyToClipboard(`https://todomax.com/product/${product.id}?ref=${user.codigo}`, `link-${product.id}`)}
+                        onClick={() => copyToClipboard(`https://Metales Acarigua.com/product/${product.id}?ref=${user.codigo}`, `link-${product.id}`)}
                         className="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold py-2.5 rounded-xl transition-colors"
                       >
                         {copiedLink === `link-${product.id}` ? <CheckCircle2 className="w-4 h-4 text-emerald-500" /> : <LinkIcon className="w-4 h-4" />}
@@ -314,7 +314,7 @@ export default function AfiliadosPage() {
 
                       {/* Texto Publicitario */}
                       <button 
-                        onClick={() => copyToClipboard(`${product.adCopy}\n\nCómpralo aquí: https://todomax.com/product/${product.id}?ref=${user.codigo}`, `copy-${product.id}`)}
+                        onClick={() => copyToClipboard(`${product.adCopy}\n\nCómpralo aquí: https://Metales Acarigua.com/product/${product.id}?ref=${user.codigo}`, `copy-${product.id}`)}
                         className="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold py-2.5 rounded-xl transition-colors"
                       >
                         {copiedLink === `copy-${product.id}` ? <CheckCircle2 className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
@@ -349,7 +349,7 @@ export default function AfiliadosPage() {
                 <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-slate-900 rounded-full"></div>
               </div>
               <div>
-                <h3 className="text-white font-black text-sm">Sofía (IA TodoMax)</h3>
+                <h3 className="text-white font-black text-sm">Sofía (IA Metales Acarigua)</h3>
                 <p className="text-emerald-400 text-[10px] font-bold">En línea</p>
               </div>
             </div>
